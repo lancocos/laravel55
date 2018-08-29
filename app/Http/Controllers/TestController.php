@@ -12,8 +12,9 @@ class TestController extends Controller
     }
     public function addUser(){
         $user = new User();
-        $user->user_name="imwz";
+        //$user->user_name="imwz";
         $user->user_pass = encrypt('admin');
+        try
         if($user->save()){
             echo "ok";
         }else{
