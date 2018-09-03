@@ -7,15 +7,19 @@
  */
 
 namespace App\Models\Observes;
+use App\Models\User;
 
 
 class UserObserve
 {
-    public  function creating(){
+    public  function creating(User $user){
+        echo "<pre>";
+        print_r($user);
+        echo "<pre/>";
         echo "creating";
-        return false;
+        return true;
     }
-    public  function created(){
+    public  function created(User $user){
         echo "created";
     }
     public  function updating(){
