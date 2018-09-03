@@ -14,11 +14,11 @@ class TestController extends Controller
         $user = new User();
         //$user->user_name="imwz";
         $user->user_pass = encrypt('admin');
-        try
-        if($user->save()){
-            echo "ok";
-        }else{
-            echo "error";
+        try{
+            $user->save();
+        }catch (\Exception $e)
+        {
+            echo $e->getMessage();
         }
     }
 }

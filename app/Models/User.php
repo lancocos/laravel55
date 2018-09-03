@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Observes\UserObserve;
 
 class User extends Model
 {
@@ -10,6 +11,11 @@ class User extends Model
     protected $primaryKey = 'USER_ID';
     //
 
+    public static function boot(){
+        parent::boot();
+
+        User::observe(new UserObserve);
+    }
     public function save1(Array $options=[]){
         $this->createRules();
         echo 11;
