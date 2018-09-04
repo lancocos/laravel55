@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function index(){
-
+    public function index(A $a){
+        //dd($a);
+        $a->aa();
+        echo __METHOD__;
+        dd($this);
     }
     public function addUser(){
         $user = new User();
@@ -20,5 +23,24 @@ class TestController extends Controller
         {
             echo $e->getMessage();
         }
+    }
+}
+class A{
+    private $b;
+    public function __construct(B $b)
+    {
+        $this->b=$b;
+        echo __CLASS__." init<br/>";
+    }
+
+    private $a=1;
+    public function aa(){
+        echo __METHOD__."<br/>";
+    }
+}
+class B{
+    public function __construct()
+    {
+        echo __CLASS__." init<br/>";
     }
 }
