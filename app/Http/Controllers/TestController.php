@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function index(A $a){
+    public function index(Request $req, A $a){
+
         //dd($a);
         $a->aa();
         echo __METHOD__;
