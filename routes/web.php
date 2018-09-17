@@ -21,3 +21,4 @@ Route::get('/test','TestController@index');
 Route::get('addUser','TestController@addUser');
 Route::resource('demo','DemoController');
 Route::resource('user','UserController');
+Route::get('users','UsersController@index');
