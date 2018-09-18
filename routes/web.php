@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+    Abort(404);
     return view('welcome');
 });
 Route::get('/hello', function () {

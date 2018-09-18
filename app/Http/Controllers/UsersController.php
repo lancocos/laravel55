@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\RepositoryInterface;
-use Illuminate\Support\Facades\App;
 
 class UsersController extends Controller
 {
@@ -18,8 +17,9 @@ class UsersController extends Controller
 
     public function index(){
         //https://www.cnblogs.com/lyzg/p/6181055.html
+        //http://www.ihref.com/read-16369.html
         $app = App();
-        dd($app);
+
         $users = $this->user->all();
         dd($users);
 
